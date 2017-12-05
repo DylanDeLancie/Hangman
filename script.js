@@ -1,6 +1,8 @@
 function startGame(){
     word = words[Math.floor(Math.random() * words.length)];
-    guessedLetters = [];
+    printWord();
+    console.log(word);
+
 }
 var guesses = 10;
 var words = ["bee","ball","united","paris","jacket","berkeley","champion"];
@@ -8,7 +10,10 @@ var word = "";
 var guessedLetters = [];
 
 function guessLetter(){
-    var letter = parseInt(document.getElementById("Letter").value);
+    var letter = document.getElementById("Letter").value;
+    guessedLetters.push(letter);
+    console.log(letter);
+    printWord();
 }
 
 
@@ -18,11 +23,12 @@ function printWord() {
     var retWord = "";
     for (var i = 0; i < word.length; i++) {
         if (guessedLetters.indexOf(word[i])) {
-            retWord += "_";
+            retWord += "_ ";
         } else {
             retWord += word[i];
         }
     }
+    document.getElementById("setUp").innerHTML= retWord;
 }
 
 
