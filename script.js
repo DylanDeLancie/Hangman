@@ -1,7 +1,7 @@
 function startGame(){
     word = words[Math.floor(Math.random() * words.length)];
-    printWord();
     console.log(word);
+    printWord();
 
 }
 var guesses = 10;
@@ -12,8 +12,8 @@ var guessedLetters = [];
 function guessLetter(){
     var letter = document.getElementById("Letter").value;
     guessedLetters.push(letter);
-    console.log(letter);
     printWord();
+    removeLetter();
 }
 
 
@@ -22,7 +22,7 @@ function guessLetter(){
 function printWord() {
     var retWord = "";
     for (var i = 0; i < word.length; i++) {
-        if (guessedLetters.indexOf(word[i])) {
+        if (guessedLetters.indexOf(word[i])>-1) {
             retWord += "_ ";
         } else {
             retWord += word[i];
@@ -31,7 +31,11 @@ function printWord() {
     document.getElementById("setUp").innerHTML= retWord;
 }
 
-
+function removeLetter(){
+    var selectedIndex = document.getElementById("Letter").selectedIndex;
+    var box = document.getElementById("Letter");
+    box.remove(selectedIndex);
+}
 
 
 
