@@ -22,7 +22,7 @@ function guessLetter(){
 function printWord() {
     var retWord = "";
     for (var i = 0; i < word.length; i++) {
-        if (guessedLetters.indexOf(word[i])>-1) {
+        if (guessedLetters.indexOf(word[i])==-1) {
             retWord += "_ ";
         } else {
             retWord += word[i];
