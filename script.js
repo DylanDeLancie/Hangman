@@ -9,6 +9,7 @@ var words = ["bee","ball","united","paris","jacket","berkeley","champion"];
 var word = "";
 var guessedLetters = [];
 
+
 function guessLetter(){
     var letter = document.getElementById("Letter").value;
     guessedLetters.push(letter);
@@ -29,6 +30,7 @@ function printWord() {
         }
     }
     document.getElementById("setUp").innerHTML= retWord;
+    return retWord();
 }
 
 function removeLetter(){
