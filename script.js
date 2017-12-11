@@ -1,8 +1,9 @@
 function startGame(){
+    guessedLetters = [];
     word = words[Math.floor(Math.random() * words.length)];
-    console.log(word);
+    deleteAllLetters();
     printWord();
-
+    setUpLetters();
 }
 var guesses = 10;
 var words = ["bee","ball","united","paris","jacket","berkeley","champion"];
@@ -30,7 +31,7 @@ function printWord() {
         }
     }
     document.getElementById("setUp").innerHTML= retWord;
-    return retWord();
+
 }
 
 function removeLetter(){
@@ -49,5 +50,15 @@ function setUpLetters(){
     for (var i=0; i<alphabet.length; i++){
         var letter = alphabet[i];
         document.getElementById("Letter").innerHTML+= "<option value="+letter+">"+letter+"</option>";
+    }
+}
+
+function deleteAllLetters(){
+    var box= document.getElementById("letters");
+    for(var i=0;i<26;i++){
+        if(guessedLetters.indexOf(alphabet[i])==-1){
+            var remove =  document.getElementById("Letter").selectedIndex;
+            box.remove(remove);
+        }
     }
 }
