@@ -1,11 +1,13 @@
 function startGame(){
-    guessedLetters = [];
     word = words[Math.floor(Math.random() * words.length)];
     deleteAllLetters();
+    guessedLetters = [];
+    var guesses = 7;
     printWord();
     setUpLetters();
+    showLetters();
 }
-var guesses = 10;
+var guesses = 6;
 var words = ["bee","ball","united","paris","jacket","berkeley","champion"];
 var word = "";
 var guessedLetters = [];
@@ -16,9 +18,13 @@ function guessLetter(){
     guessedLetters.push(letter);
     printWord();
     removeLetter();
+    showLetters();
+    lessGuesses(letter);
 }
 
-
+function showLetters(){
+    document.getElementById("guessedLetters").innerHTML= guessedLetters;
+}
 
 
 function printWord() {
@@ -40,7 +46,18 @@ function removeLetter(){
     box.remove(selectedIndex);
 }
 
-
+function lessGuesses(letter){
+    var lose = "";
+    var printGuesses = "";
+    if (word.indexOf(letter) == -1){
+        guesses--;
+    }
+    document.getElementById("guesses").innerHTML = printGuesses + "Guesses Remaining: " + guesses;
+    if (guesses == 0){
+        lose += "YOU LOSE!"
+    }
+    document.getElementById("lose").innerHTML = lose;
+}
 
 
 
@@ -54,11 +71,15 @@ function setUpLetters(){
 }
 
 function deleteAllLetters(){
-    var box= document.getElementById("letters");
+    var box= document.getElementById("Letter");
     for(var i=0;i<26;i++){
-        if(guessedLetters.indexOf(alphabet[i])==-1){
-            var remove =  document.getElementById("Letter").selectedIndex;
-            box.remove(remove);
+        if(guessedLetters.indexOf(alphabet[i])== -1){
+            var thing = document.getElementById("Letter").selectedIndex;
+            box.remove(thing);
         }
-    }
+        }
+}
+
+function resetGuesses(){
+
 }
