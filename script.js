@@ -1,8 +1,8 @@
 function startGame(){
+    resetGuesses();
     word = words[Math.floor(Math.random() * words.length)];
     deleteAllLetters();
     guessedLetters = [];
-    var guesses = 7;
     printWord();
     setUpLetters();
     showLetters();
@@ -14,12 +14,16 @@ var guessedLetters = [];
 
 
 function guessLetter(){
-    var letter = document.getElementById("Letter").value;
-    guessedLetters.push(letter);
-    printWord();
-    removeLetter();
-    showLetters();
-    lessGuesses(letter);
+    if (guesses < 1){
+        return "try again";
+    } else {
+        var letter = document.getElementById("Letter").value;
+        guessedLetters.push(letter);
+        printWord();
+        removeLetter();
+        showLetters();
+        lessGuesses(letter);
+    }
 }
 
 function showLetters(){
@@ -81,5 +85,6 @@ function deleteAllLetters(){
 }
 
 function resetGuesses(){
-
+    guesses = 6;
+    document.getElementById("guesses").innerHTML = "Guesses Remaining: " + guesses;
 }
