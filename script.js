@@ -14,8 +14,13 @@ var guessedLetters = [];
 
 
 function guessLetter(){
+    var progress = printWord();
+    var win = "";
     if (guesses < 1){
         return "try again";
+    } else if(progress.indexOf("_") === -1){
+        win += "YOU WIN!";
+        document.getElementById("win").innerHTML = win;
     } else {
         var letter = document.getElementById("Letter").value;
         guessedLetters.push(letter);
@@ -35,7 +40,7 @@ function printWord() {
     var retWord = "";
     for (var i = 0; i < word.length; i++) {
         if (guessedLetters.indexOf(word[i])==-1) {
-            retWord += "_ ";
+            retWord += "_ ";    
         } else {
             retWord += word[i];
         }
