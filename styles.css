@@ -13,7 +13,7 @@
 #win {
     font-size: 20px;
     font-family: "Arial Rounded MT Bold";
-    vertical-align: middle;
+
     vertical-align: top;
 }
 
@@ -31,19 +31,18 @@
     font-size: 20px;
     font-family: "Arial Rounded MT Bold";
     vertical-align: middle;
-    vertical-align: top;
+
 }
 
 #guessedLetters {
     font-size: 20px;
     font-family: "Arial Rounded MT Bold";
     vertical-align: middle;
-    vertical-align: top;
+
 }
 
 #guesses {
     font-size: 20px;
     font-family: "Arial Rounded MT Bold";
     vertical-align: middle;
-    vertical-align: top;
 }
