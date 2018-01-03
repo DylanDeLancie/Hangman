@@ -9,3 +9,41 @@
     text-align: center;
 
 }
+
+#win {
+    font-size: 20px;
+    font-family: "Arial Rounded MT Bold";
+    vertical-align: middle;
+    vertical-align: top;
+}
+
+#lose {
+    font-size: 20px;
+    font-family: "Arial Rounded MT Bold";
+    vertical-align: top;
+}
+
+#body {
+    vertical-align: middle;
+}
+
+#setUp {
+    font-size: 20px;
+    font-family: "Arial Rounded MT Bold";
+    vertical-align: middle;
+    vertical-align: top;
+}
+
+#guessedLetters {
+    font-size: 20px;
+    font-family: "Arial Rounded MT Bold";
+    vertical-align: middle;
+    vertical-align: top;
+}
+
+#guesses {
+    font-size: 20px;
+    font-family: "Arial Rounded MT Bold";
+    vertical-align: middle;
+    vertical-align: top;
+}

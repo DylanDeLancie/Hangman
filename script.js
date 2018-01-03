@@ -14,11 +14,11 @@ var guessedLetters = [];
 
 
 function guessLetter(){
-    var progress = printWord();
+    var underscoreWord = printWord();
     var win = "";
     if (guesses < 1){
         return "try again";
-    } else if(progress.indexOf("_") === -1){
+    } else if(underscoreWord.indexOf("_") === -1) {
         win += "YOU WIN!";
         document.getElementById("win").innerHTML = win;
     } else {
@@ -46,7 +46,7 @@ function printWord() {
         }
     }
     document.getElementById("setUp").innerHTML= retWord;
-
+    return retWord;
 }
 
 function removeLetter(){
